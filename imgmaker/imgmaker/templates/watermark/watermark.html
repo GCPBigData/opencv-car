@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=2" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+    ></script>
+  </head>
+
+  <style>
+    body {
+      height: 100vh;
+      background: url("{{ background | img_encode }}") no-repeat center top fixed;
+      background-size: cover;
+      display: flex;
+    }
+
+    section {
+      /* margin-top: auto !important; */
+      align-self: flex-end;
+      width: 100%;
+    }
+
+    .level {
+      width: 100%;
+      color: white !important;
+      font-weight: 500;
+      text-shadow: 2px 2px black;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    strong,
+    i,
+    svg {
+      color: white !important;
+      font-weight: 900;
+      text-shadow: 2px 2px black;
+    }
+
+    em {
+      color: white !important;
+      text-shadow: 2px 2px black;
+    }
+
+    .level div {
+      padding: 1em;
+    }
+
+    .level-left {
+      padding-left: 2em !important;
+    }
+
+    .level-right {
+      padding-right: 2em !important;
+    }
+
+    i,
+    svg,
+    strong,
+    em {
+      margin-left: 0.5em;
+      margin-right: 0.1em;
+    }
+
+    .brand {
+      font-size: 1.5em;
+    }
+
+    {{ custom_css or '' }}
+  </style>
+
+  <body>
+    <section class="top">
+      <nav class="level is-mobile">
+        <div class="level-left is-hidden-mobile">
+          <p class="level-item">
+            {{ left_text | markdown }}
+          </p>
+        </div>
+        <div class="level-right">
+          <i class="{{ fa_icon }} fa-2x"></i>
+          <p class="level-item brand"><strong>{{ brand_text }}</strong></p>
+        </div>
+      </nav>
+    </section>
+  </body>
+</html>
